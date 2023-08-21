@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option go_package = "./proto";
+
+package ecommerce;
+
+service OrderService {
+    rpc CreateOrder (CreateOrderRequest) returns (CreateOrderResponse);
+    // Add more RPCs for managing orders
+}
+
+message CreateOrderRequest {
+    string product_id = 1;
+    int32 quantity = 2;
+    bool checkPaid = 3;
+}
+
+message CreateOrderResponse {
+    string order_id = 1;
+    int32 quantity = 2;
+    string messge = 3;
+}

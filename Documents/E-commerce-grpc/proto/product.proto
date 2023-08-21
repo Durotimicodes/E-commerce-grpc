@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package ecommerce;
+
+service ProductService {
+    rpc ListProducts (ListProductsRequest) returns (ListProductsResponse);
+    // Add more RPCs for managing products
+}
+
+message ListProductsRequest {
+    // Add fields if needed
+}
+
+message ListProductsResponse {
+    repeated Product products = 1;
+}
+
+message Product {
+    string id = 1;
+    string productName = 2;
+    float productPrice = 3;
+    uint quantity = 4;
+    bool status = 5;
+    string image =6;
+}
+
